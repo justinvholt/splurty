@@ -3,7 +3,7 @@ class CreateQuotes < ActiveRecord::Migration[5.0]
     create_table :quotes do |t|
       t.string :saying
       t.string :author
-      t.timestamps
+      # t.timestamps
     end
   end
 end
