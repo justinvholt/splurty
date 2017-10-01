@@ -6,6 +6,15 @@
   clear: both;
 }
 
+header {
+  border-top: 9px solid #222222;
+}
+
+#header-elements {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 img.resize {
   max-width: 60%;
   max-height: 60%;
@@ -38,13 +47,9 @@ img.resize {
   color: black;
   font-family: 'Hind Vadodara', sans-serif;
   font-size: 25px;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 0px solid #DFDFDF;
   display: inline;
   margin-right: 40px;
-}
-
-header {
-  border-top: 9px solid #222222;
 }
 
 hr {
@@ -53,12 +58,23 @@ hr {
 
 h1 {
   font-family: 'Cinzel', serif;
-//   font-weight: 600;
-//   letter-spacing: -1.5px;
 }
 
 h2 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-//   letter-spacing: -1.5px;
+}
+
+.next-quote {
+  color: #F84342;
+  font-family: 'Hind Vadodara', sans-serif;
+  font-size: 18px;
+//   text-decoration: underline;
+}
+
+.footer-blurb {
+  font-family: 'Hind Vadodara', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  text-align: right;
 }
