@@ -17,3 +17,7 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree .
+
+document.addEventListener("turbolinks:before-visit", function() {
+  Turbolinks.clearCache();
+})

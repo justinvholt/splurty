@@ -9,11 +9,11 @@ body {
   height: 100%;
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding-top: 10px;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #FFFFFF;
+  opacity: 1; // Leave this as 1
 }

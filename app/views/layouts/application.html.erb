@@ -6,12 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    
+    <script src="/app/assets/gmaps.js" type="text/javascript"></script>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWe6kg7iXYs11CUtWN5nsk0lFIHy0KRd4&callback=initMap">
+    </script>
 
+  </head>
+    
   <body>
+    
+    <div id="map-container">
+
     <header class="row">
       <div class="col-3" id="header-elements">
-        <img class="resize" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/2ffe6e43813015.56075a9655916.png" alt="globe" />
+        <img class="resize" src="https://cdn.getforge.com/justinholt.getforge.io/1506964086/globe_transparent.png" alt="globe" />
       </div>
       <div class="col-4 site_name" id="header-elements">
         <span class="title">A JOURNEY OF A THOUSAND MILES . . .<br></span>
@@ -24,28 +34,36 @@
     </header>
     
     <hr />
-    
+         
     <br class="clear" />
+    
 
-    <div class="container">    
-    <%= yield %>
-    </div>
-    
-    <div> </div>
-    
-    <div class="footer">
-      <div class="container">
-        <div class="row"> 
-          <div class="col-6 next-quote" >
-            <%= link_to "Learn more about what it takes to be a vagabond.", '#', class: "next-quote" %>
-          </div>
-          <div class="col-6 footer-blurb">
-            Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
-            Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a>
+  
+      <div id="quote" class="container">    
+      <%= yield %>
+      </div>
+      
+      <div style="clear:both;"></div>
+      
+      <div class="footer">
+        <div class="container">
+          <div class="row"> 
+            <div class="col-6 next-quote" >
+              <%= link_to "Learn more about what it takes to be a vagabond.", '#', class: "next-quote" %>
+            </div>
+            <div class="col-6 footer-blurb">
+              Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
+              Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      
+      <!--div for map container-->
+      </div>
+    
+
+    <div id="map"></div>
     
   </body>
 </html>

@@ -6,9 +6,9 @@
   clear: both;
 }
 
-header {
-  border-top: 9px solid #222222;
-}
+// header {
+//   border-top: 9px solid #222222;
+// }
 
 #header-elements {
   display: inline-block;
@@ -77,4 +77,21 @@ h2 {
   font-size: 15px;
   font-style: italic;
   text-align: right;
+}
+
+
+#map {
+  height: 100%;
+  position: absolute; 
+  top: 0; 
+  bottom: -200px; 
+  left: 0; 
+  right: 0; 
+  z-index: 0;
+  opacity: 0.5;
+}
+
+#map-container {
+  z-index: 100;
+  position: relative;
 }
