@@ -4,66 +4,69 @@
     <title>Splurty</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-no-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false ' %>
     
     <script src="/app/assets/gmaps.js" type="text/javascript"></script>
-    
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWe6kg7iXYs11CUtWN5nsk0lFIHy0KRd4&callback=initMap">
-    </script>
-
+  
   </head>
     
   <body>
     
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWe6kg7iXYs11CUtWN5nsk0lFIHy0KRd4&callback=initMap"></script>
+
+  <div id="map"></div>
+    
     <div id="map-container">
 
-    <header class="row">
-      <div class="col-3" id="header-elements">
-        <img class="resize" src="https://cdn.getforge.com/justinholt.getforge.io/1506964086/globe_transparent.png" alt="globe" />
-      </div>
-      <div class="col-4 site_name" id="header-elements">
-        <span class="title">A JOURNEY OF A THOUSAND MILES . . .<br></span>
-        <span class="slogan">Wisdom from those who dare to wander far and wide.</span>
-      </div>
-      <div class="col-5 links" id="header-elements">
-        <%= link_to 'Contribute', '#' %>
-        <%= link_to 'About', '#' %>
-      </div>
-    </header>
-    
-    <hr />
-         
-    <br class="clear" />
-    
+      <header class="row vcenter">
+        <div class="col-3">
+          <%= link_to root_path, class: 'logo' do %>
+            <img src="https://cdn.getforge.com/justinholt.getforge.io/1506964086/globe_transparent.png" alt="globe" />
+          <% end %>
+        </div>
+        
+        <div class="col-4 site_name">
+          <div><span class="text">THE JOURNEY OF A THOUSAND MILES&nbsp;.&nbsp;.&nbsp;.<br></span>
+          <span class="slogan">Wisdom from those who dared to wander far and wide.</span></div>
+        </div>
+        
+        <div class="col-5 text links">
+          <%= link_to 'Where Do You Want to Go?', new_quote_path %>
+          <!--<input id="pac-input" class="controls" type="text" placeholder="Search Box">-->
+          <%= link_to 'About',  %>
+        </div>
+      </header>
+      
+      <hr />
+           
+      <br class="clear" />
 
-  
       <div id="quote" class="container">    
       <%= yield %>
       </div>
       
       <div style="clear:both;"></div>
-      
+
       <div class="footer">
         <div class="container">
           <div class="row"> 
             <div class="col-6 next-quote" >
-              <%= link_to "Learn more about what it takes to be a vagabond.", '#', class: "next-quote" %>
+              <%= link_to "Need more inspiration to get out and explore?", root_path, class: 'next-quote' %>
             </div>
+
             <div class="col-6 footer-blurb">
               Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
               Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a>
             </div>
+
           </div>
         </div>
       </div>
+    
+    <!--div for map-container -->
+    </div>
       
-      <!--div for map container-->
-      </div>
-    
-
-    <div id="map"></div>
-    
   </body>
+  
 </html>

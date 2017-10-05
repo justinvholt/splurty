@@ -1,0 +1,6 @@
+<h1>Enter a city or country you'd like to explore.</h1>
+<%= simple_form_for @destination do |f| %>
+  <%= f.input :destination %>
+  <br />
+  <%= f.submit 'Let\'s Go!, class: 'btn btn-danger' %>
+<% end %>

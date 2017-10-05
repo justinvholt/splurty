@@ -21,3 +21,4 @@
 document.addEventListener("turbolinks:before-visit", function() {
   Turbolinks.clearCache();
 })
+
