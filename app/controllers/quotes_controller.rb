@@ -8,8 +8,17 @@ class QuotesController < ApplicationController
   end
   
   def create
-    Quote.create(quote_params)
-    redirect_to root_path
+    @quote = Quote.create(quote_params)
+    if @quote.invalid?(:saying.length < 5)
+      flash[:error] = '<strong>Could not save.</strong> How you gonna inspire people to see the world with a quote that short?!'
+      redirect_to root_path
+    elsif  @quote.invalid?(:saying.length > 280)
+      flash[:error] = '<strong>Could not save.</strong> Your quote is simply too long. You better make sure you didn\'t miss your flight typing it out!'
+      redirect_to root_path
+    elsif @quote.invalid?(:author.length)
+      flash[:error] = '<strong>Could not save.</strong> Don\'t forget to give credit where its due!'
+      redirect_to root_path
+    end
   end
 
   private

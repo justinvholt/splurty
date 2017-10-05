@@ -42,8 +42,13 @@
            
       <br class="clear" />
 
-      <div id="quote" class="container">    
-      <%= yield %>
+      <div id="quote" class="container">
+        <% if flash[:error].present? %>
+          <div class="col-10 offset-1 alert alert-danger">
+            <center><%= flash[:error].html_safe %></center>
+          </div>
+        <% end %>
+        <%= yield %>
       </div>
       
       <div style="clear:both;"></div>
