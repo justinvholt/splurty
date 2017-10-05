@@ -20,7 +20,7 @@ header {
   text-decoration: none;
 }
 
-img {
+.logo_image {
   max-width: 60%;
   max-height: 60%;
   align-items: center;
@@ -28,29 +28,32 @@ img {
 }
 
 .site_name {
-  font-family: 'Hind Vadodara', sans-serif;
+  font-family: 'Cinzel', serif;
+  font-weight: 700px;
   margin-left: -120px;
 }
 
 .text {
-  font-size: 20px;   
+  font-size: 22px;   
   font-weight: bold;
   overflow-wrap: normal;
 }
 
 .slogan {
+  font-family: 'Hind Vadodara', sans-serif;
   font-size: 18px;
   font-style: italic;
   overflow-wrap: normal;
 }
 
 .links {
-  margin-left: 80px;
+  margin-left: 120px;
 }
 
 .links a {
   color: black;
-  font-family: 'Hind Vadodara', sans-serif;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
   font-size: 25px;
   border-bottom: 0px solid #DFDFDF;
   display: inline;
@@ -73,6 +76,11 @@ h2 {
 h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
+}
+
+h5 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
 }
 
 .next-quote {
