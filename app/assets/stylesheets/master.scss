@@ -23,7 +23,6 @@ header {
 .logo_image {
   max-width: 60%;
   max-height: 60%;
-  align-items: center;
 //   img source: https://www.behance.net/gallery/5568429/Various-Logo-Designs
 }
 
@@ -34,8 +33,11 @@ header {
 }
 
 .text {
-  font-size: 22px;   
-  font-weight: bold;
+  color: black;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 25px;
+  font-weight: 700;
   overflow-wrap: normal;
 }
 
@@ -57,7 +59,7 @@ header {
   font-size: 25px;
   border-bottom: 0px solid #DFDFDF;
   display: inline;
-  margin-right: 40px;
+  margin-left: -40px;
 }
 
 hr {
@@ -82,12 +84,19 @@ h5 {
   font-family: 'Cinzel', serif;
   font-weight: 600;
 }
+h6 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 50px;
+}
 
 .next-quote {
   color: #F84342;
   font-family: 'Hind Vadodara', sans-serif;
   font-size: 18px;
-//   text-decoration: underline;
 }
 
 .footer-blurb {
@@ -105,7 +114,7 @@ h5 {
   left: 0; 
   right: 0; 
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 #map-container {
