@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   def index
-    @quote = Quote.order("RANDOM()").first
+    @quote = Quote.order('RANDOM()').first
   end
 
   def new
@@ -30,6 +30,7 @@ class QuotesController < ApplicationController
   end
 
   def about
+    @skip_footer = true
   end
 
   private

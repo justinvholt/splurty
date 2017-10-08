@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Splurty</title>
+    <title>SplurtyAbroad</title>
     <%= csrf_meta_tags %>
+    
+    <!--Favicon located in the app/public folder. Just change the name of the file to 'favicon' and rails will do the rest.-->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" sizes="32x32" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-no-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false ' %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-no-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "false" %>
     
     <script src="/app/assets/gmaps.js" type="text/javascript"></script>
-  
+
   </head>
     
   <body>
-    
+
   <div id="map"></div>
     
     <div id="map-container">
 
       <header class="row vcenter">
         <div class="col-3">
-          <%= link_to root_path, class: 'logo' do %>
-            <%= image_tag 'globe_transparent.png', class: 'logo_image' %>
+          <%= link_to root_path, class: "logo" do %>
+            <%= image_tag "plane_brad_woodard.png", class: "logo_image" %>
           <% end %>
         </div>
         
         <div class="col-sm-5 site_name">
           <div><span class="text">THE JOURNEY OF A THOUSAND MILES&nbsp;.&nbsp;.&nbsp;.<br></span>
-          <span class="slogan">Wisdom from those who dared to wander far and wide.</span></div>
+          <span class="slogan">Wisdom for those who dare to wander far and wide.</span></div>
         </div>
         
         <div class="col-4 text links">
-          <div><%= link_to 'Let\'s Go!', destination_path %><br>
-          <%= link_to 'Know a Good Travel Quote?', new_quote_path %><br>
-          <%= link_to 'About', about_path %></div>
+          <div><%= link_to "Let\'s Go!", destination_path %><br>
+          <%= link_to "Add a Quote", new_quote_path %><br>
+          <%= link_to "About", about_path %></div>
         </div>
       </header>
       
@@ -60,25 +63,30 @@
       <hr />
            
       <br class="clear" />
-
-      <div id="quote" class="container">
+      <div id="quote" class="container flex-grow">
         <% if flash[:error].present? %>
           <div class="col-10 offset-1 alert alert-danger">
             <center><%= flash[:error].html_safe %></center>
           </div>
         <% end %>
         <%= yield %>
+        
+        </div>
       </div>
       
       <div style="clear:both;"></div>
 
       <div class="footer">
         <div class="container">
-          <div class="row"> 
-            <div class="col-6 next-quote" >
-              <%= link_to "Need more inspiration to get out and explore?", root_path, class: 'next-quote' %>
+          <div class="row">
+            <div class="col-8 next-quote" >
+              <%= link_to "Need more inspiration to get out and explore?", root_path, class: "next-quote" %>
             </div>
-
+            <div class="col-4"></div>
+          </div>
+            
+          <div class="row">
+            <div class="col-6"></div>
             <div class="col-6 footer-blurb">
               Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
               Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a>
@@ -90,8 +98,9 @@
     
     <!--div for map-container -->
     </div>
-    
+  
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWe6kg7iXYs11CUtWN5nsk0lFIHy0KRd4&v=3&libraries=places&callback=initAutocomplete"></script>
+
   </body>
   
 </html>

@@ -1,4 +1,4 @@
-@import "bootstrap";
+@import 'bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
 @import url('https://fonts.googleapis.com/css?family=Hind+Vadodara');
 
@@ -21,15 +21,15 @@ header {
 }
 
 .logo_image {
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 70%;
+  max-height: 70%;
 //   img source: https://www.behance.net/gallery/5568429/Various-Logo-Designs
 }
 
 .site_name {
   font-family: 'Cinzel', serif;
   font-weight: 700px;
-  margin-left: -120px;
+  margin-left: -100px;
 }
 
 .text {
@@ -49,7 +49,7 @@ header {
 }
 
 .links {
-  margin-left: 120px;
+  margin-left: 80px;
 }
 
 .links a {
@@ -59,7 +59,6 @@ header {
   font-size: 25px;
   border-bottom: 0px solid #DFDFDF;
   display: inline;
-  margin-left: -40px;
 }
 
 hr {
@@ -84,13 +83,10 @@ h5 {
   font-family: 'Cinzel', serif;
   font-weight: 600;
 }
+
 h6 {
   font-family: 'Cinzel', serif;
   font-weight: 600;
-}
-
-footer {
-  margin-top: 50px;
 }
 
 .next-quote {
@@ -106,6 +102,22 @@ footer {
   text-align: right;
 }
 
+// html {
+//   background-color: 99B3CC;
+//   background-image: url(/splurty/public/99B3CC.png);
+//   background-position: right;
+//   background-repeat: repeat;
+// }
+
+.nobreak {
+  font-size: 25px;
+  display:inline;
+}
+
+.about {
+  line-height: 120%;
+}
+
 #map {
   height: 100%;
   position: absolute; 
@@ -114,12 +126,13 @@ footer {
   left: 0; 
   right: 0; 
   z-index: 0;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 #map-container {
   z-index: 100;
   position: relative;
+  overflow-x: hidden;
 }
 
 .pac-card {

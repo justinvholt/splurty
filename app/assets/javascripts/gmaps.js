@@ -1,10 +1,11 @@
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 16.5325432, lng: -94.8676021},
+    center: {lat: 33.6039621, lng: -40.9651539},
     zoom: 2,
     fullscreenControl: false,
     streetViewControl: false,
-    mapTypeControl: false
+    mapTypeControl: false,
+    scrollwheel: false
   });
   
   // Create the search box and link it to the UI element.
@@ -65,11 +66,10 @@ function initAutocomplete() {
       (function(marker, place){
         marker.addListener('click', function() {
           var content = "<h5>"+place.name+"</h5>";
-          content += "<p>"+str1+"<br />";
-          content += '<strong><a href = "http://www.atlasobscura.com/search?utf8=✓&lat='+place.geometry.location.lat()+'&lng='+place.geometry.location.lng()+'" target="_blank">' +str2+ '</a></strong><br />';
-          content += "<br />"+place.formatted_address+"</p>";
+          content += "<p>"+str1+"</p>";
+          content += '<h6><a href = "http://www.atlasobscura.com/search?utf8=✓&lat='+place.geometry.location.lat()+'&lng='+place.geometry.location.lng()+'" target="_blank">' +str2+ '</a></h6>';
+          content += "<p>"+place.formatted_address+"</p>";
           infowindow.setContent(content);
-          // infoWindow.setContent("<span class="+opacityClass+">" +content+ "</span>");
           infowindow.open(map, marker);
         });
       })(marker, place);
@@ -95,5 +95,3 @@ function initAutocomplete() {
   });
 
 }
-
-
