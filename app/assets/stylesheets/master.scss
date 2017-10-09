@@ -89,6 +89,11 @@ h6 {
   font-weight: 600;
 }
 
+.page {
+  display: inline-block;
+  overflow: auto;
+}
+
 .next-quote {
   color: #F84342;
   font-family: 'Hind Vadodara', sans-serif;
@@ -102,37 +107,30 @@ h6 {
   text-align: right;
 }
 
-// html {
-//   background-color: 99B3CC;
-//   background-image: url(/splurty/public/99B3CC.png);
-//   background-position: right;
-//   background-repeat: repeat;
-// }
-
-.nobreak {
-  font-size: 25px;
-  display:inline;
-}
-
-.about {
-  line-height: 120%;
+@media (max-width: 400px) {
+  .footer-blurb {
+    text-align: left;
+  }
 }
 
 #map {
-  height: 100%;
   position: absolute; 
   top: 0; 
-  bottom: -200px; 
+  bottom: 0; 
   left: 0; 
   right: 0; 
   z-index: 0;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 #map-container {
+  height: 100%;
+  max-width: none;
+  margin: 0px;
   z-index: 100;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .pac-card {
@@ -235,4 +233,31 @@ h6 {
 
 input:focus {
   outline:none;
+}
+
+.modal-title {
+  color: black;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 25px;
+  
+}
+
+.modal {
+  color: black;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+}
+
+.nobreak {
+  font-size: 25px;
+  display:inline;
+}
+
+.about {
+  line-height: 120%;
+}
+
+:selection {
+  background-color: #F84342;
 }

@@ -1,11 +1,13 @@
+var map;
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.6039621, lng: -40.9651539},
-    zoom: 2,
+    center: {lat: 37.1039621, lng: -16.9651539},
+    zoom: 3,
     fullscreenControl: false,
     streetViewControl: false,
     mapTypeControl: false,
-    scrollwheel: false
+    scrollwheel: false,
+    gestureHandling: 'cooperative'
   });
   
   // Create the search box and link it to the UI element.
@@ -95,3 +97,4 @@ function initAutocomplete() {
   });
 
 }
+
