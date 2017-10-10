@@ -18,7 +18,11 @@ class QuotesController < ApplicationController
       flash[:error] = '<strong>Could not save.</strong> Don\'t forget to give credit where its due!'
       end
     end
-    
+
+    if @quote.saying[0] == '"' || @quote.saying[-1] == '"'
+      @quote.saying = @quote.saying.tr('\"', "")
+    end
+
     if @quote.save
       UserMailer.confirm_or_no(@admin).deliver
     end

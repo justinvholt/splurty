@@ -239,14 +239,19 @@ input:focus {
   color: black;
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 20px;
   
 }
 
 .modal {
   color: black;
   font-family: 'Cinzel', serif;
-  font-size: 25px;
+  font-size: 22px;
+  
+}
+
+body.modal-open div.modal-backdrop { 
+    z-index: 0; 
 }
 
 .nobreak {

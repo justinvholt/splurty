@@ -1,4 +1,3 @@
-var map;
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.1039621, lng: -16.9651539},
@@ -97,4 +96,3 @@ function initAutocomplete() {
   });
 
 }
-
