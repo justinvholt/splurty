@@ -1,3 +1,4 @@
+
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.1039621, lng: -16.9651539},
@@ -19,7 +20,7 @@ function initAutocomplete() {
   });
   
   var infowindow = new google.maps.InfoWindow({
-   });
+  });
 
   var markers = [];
    // [START region_getplaces]
@@ -55,9 +56,9 @@ function initAutocomplete() {
           // icon: icon,
           // title: place.name,
           animation: google.maps.Animation.DROP,
-          position: place.geometry.location,
+          position: place.geometry.location
         });
-      
+        
       markers.push(marker);
       
       var str1 = "Learn more about it @";
@@ -66,10 +67,9 @@ function initAutocomplete() {
       //Add info window click events here
       (function(marker, place){
         marker.addListener('click', function() {
-          var content = "<h5>"+place.name+"</h5>";
-          content += "<p>"+str1+"</p>";
-          content += '<h6><a href = "http://www.atlasobscura.com/search?utf8=✓&lat='+place.geometry.location.lat()+'&lng='+place.geometry.location.lng()+'" target="_blank">' +str2+ '</a></h6>';
-          content += "<p>"+place.formatted_address+"</p>";
+          var content = "<h5>"+place.formatted_address+"</h5>";
+          content += "<center>"+str1+"</center><br />";
+          content += '<center><h6><a href="http://www.atlasobscura.com/search?utf8=✓&lat='+place.geometry.location.lat()+'&lng='+place.geometry.location.lng()+'" target="_blank">' +str2+ '</a></h6><center>';
           infowindow.setContent(content);
           infowindow.open(map, marker);
         });
@@ -85,7 +85,7 @@ function initAutocomplete() {
     });
     
     map.fitBounds(bounds);
-    map.panBy(0,-220);
+    map.panBy(0,-160);
     
     google.maps.event.addListenerOnce(yourMap, 'bounds_changed', function(event) {
       if (this.getZoom() > 13) {

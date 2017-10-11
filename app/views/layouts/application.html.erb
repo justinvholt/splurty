@@ -18,87 +18,87 @@
 
   <div id="map"></div>
     
-    <div id="map-container">
+  <div id="map-container">
 
-      <header class="row vcenter">
-        <div class="col-3">
-          <%= link_to root_path, class: "logo" do %>
-            <%= image_tag "plane_brad_woodard.png", class: "logo_image" %>
+    <header class="row vcenter">
+      <div class="col-3">
+        <%= link_to root_path, class: "logo" do %>
+          <%= image_tag "plane_brad_woodard.png", class: "logo_image" %>
+        <% end %>
+      </div>
+      
+      <div class="col col-sm-5 site_name">
+        <span class="text">THE JOURNEY OF A THOUSAND MILES&nbsp;.&nbsp;.&nbsp;.<br /></span>
+        <span class="hidden-xs-down slogan">Wisdom for those who dare to wander far and wide.</span>
+      </div>
+      
+      <div class="col-10 offset-1 offset-sm-0 col-sm-4 text links">
+        <%= link_to "Let\'s Go!", destination_path %><br />
+        <!-- Button trigger modal -->
+        <%= link_to "Add a Quote", "#", data: {toggle: "modal", target: "#myModal"} %><br />
+        <!-- <%= link_to "Add a Quote", new_quote_path %><br>-->
+        <%= link_to "About", about_path %>
+      </div>
+    </header>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Enter Your Favorite Travel Quote</h4>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for Quote.new do |f| %>
+              <%= f.input :saying, label: "Add your quote here", placeholder: "The journey of a thousand miles begins with a single step." %>
+              <br />
+              <%= f.input :author, label: "Who is the author of the quote?", placeholder: "Lao Tzu" %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.submit "Create", class: "btn btn-danger" %>
+            </div>
           <% end %>
         </div>
-        
-        <div class="col col-sm-5 site_name">
-          <span class="text">THE JOURNEY OF A THOUSAND MILES&nbsp;.&nbsp;.&nbsp;.<br /></span>
-          <span class="hidden-xs-down slogan">Wisdom for those who dare to wander far and wide.</span>
-        </div>
-        
-        <div class="col-10 offset-1 offset-sm-0 col-sm-4 text links">
-          <%= link_to "Let\'s Go!", destination_path %><br />
-          <!-- Button trigger modal -->
-          <%= link_to "Add a Quote", "#", data: {toggle: "modal", target: "#myModal"} %><br />
-          <!-- <%= link_to "Add a Quote", new_quote_path %><br>-->
-          <%= link_to "About", about_path %>
-        </div>
-      </header>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Enter Your Favorite Travel Quote</h4>
-            </div>
-            <div class="modal-body">
-              <%= simple_form_for Quote.new do |f| %>
-                <%= f.input :saying, label: "Add your quote here", placeholder: "The journey of a thousand miles begins with a single step." %>
-                <br />
-                <%= f.input :author, label: "Who is the author of the quote?", placeholder: "Lao Tzu" %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= f.submit "Create", class: "btn btn-danger" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
       </div>
-      
-      <hr />
-      <br class="clear" />
-
-      <div id="quote page" class="container flex-grow">
-        <% if flash[:error].present? %>
-          <div class="col-10 offset-1 alert alert-danger">
-            <center><%= flash[:error].html_safe %></center>
-          </div>
-        <% end %>
-        <%= yield %>
-        
-        </div>
-      </div>
-
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-12 next-quote">
-              <%= link_to "Need more inspiration to get out and explore?", root_path, class: "next-quote" %>
-            </div>
-          </div>  
-          
-          <div class="row">  
-            <div class="col-12 col-sm-12 footer-blurb float-right">
-              Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
-              Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    
-    <!--div for map-container -->
     </div>
+    
+    <hr />
+    <br class="clear" />
+
+    <div id="quote page" class="container flex-grow">
+      <% if flash[:error].present? %>
+        <div class="col-10 offset-1 alert alert-danger">
+          <center><%= flash[:error].html_safe %></center>
+        </div>
+      <% end %>
+      <%= yield %>
+      
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 next-quote">
+            <%= link_to "Need more inspiration to get out and explore?", root_path, class: "next-quote" %>
+          </div>
+        </div>  
+        
+        <div class="row">
+          <div class="col-12 col-sm-12 footer-blurb float-right">
+            Proudly hacked somewhere along I-95 by <a href="http://justinholt.getforge.io/index.html" target="_blank">JVH</a><br />
+            Build your own Splurty Web App! <a href="http://thefirehoseproject.com" target="_blank">Learn how to code here.</a><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!--div for map-container -->
+  </div>
   
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWe6kg7iXYs11CUtWN5nsk0lFIHy0KRd4&v=3&libraries=places&callback=initAutocomplete"></script>
 

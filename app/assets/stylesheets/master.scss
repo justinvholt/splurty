@@ -113,7 +113,17 @@ h6 {
   }
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 #map {
+  height: 100%;
+  width: 100%;
   position: absolute; 
   top: 0; 
   bottom: 0; 
@@ -121,16 +131,20 @@ h6 {
   right: 0; 
   z-index: 0;
   opacity: 0.6;
+
 }
 
 #map-container {
-  height: 100%;
+  position: relative;
   max-width: none;
   margin: 0px;
   z-index: 100;
-  position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+#marker {
+  z-index: 999; 
 }
 
 .pac-card {
@@ -240,7 +254,7 @@ input:focus {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 20px;
-  
+
 }
 
 .modal {
@@ -251,18 +265,14 @@ input:focus {
 }
 
 body.modal-open div.modal-backdrop { 
-    z-index: 0; 
+  z-index: 0; 
 }
 
 .nobreak {
   font-size: 25px;
-  display:inline;
+  display: inline;
 }
 
 .about {
   line-height: 120%;
-}
-
-:selection {
-  background-color: #F84342;
 }
