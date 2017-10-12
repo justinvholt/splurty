@@ -85,7 +85,7 @@ function initAutocomplete() {
     });
     
     map.fitBounds(bounds);
-    map.panBy(0,-160);
+    map.panBy(0,-220);
     
     google.maps.event.addListenerOnce(yourMap, 'bounds_changed', function(event) {
       if (this.getZoom() > 13) {

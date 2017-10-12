@@ -7,10 +7,10 @@
 }
 
 header {
-  margin-top: auto;
-  margin-bottom: -20px;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-  
+
 .vcenter {
   display: flex;
   align-items: center;
@@ -61,37 +61,25 @@ header {
   display: inline;
 }
 
-hr {
-  clear:both;
-}
-
 h1 {
   font-family: 'Cinzel', serif;
 }
 
-h2 {
+h2, h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
 }
 
-h3 {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-}
-
-h5 {
+h5, h6 {
   font-family: 'Cinzel', serif;
   font-weight: 600;
 }
 
-h6 {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-}
-
-.page {
-  display: inline-block;
-  overflow: auto;
+footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1.5em;
+  align-self: center;
 }
 
 .next-quote {
@@ -113,17 +101,7 @@ h6 {
   }
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
 #map {
-  height: 100%;
-  width: 100%;
   position: absolute; 
   top: 0; 
   bottom: 0; 
@@ -136,11 +114,18 @@ body {
 
 #map-container {
   position: relative;
-  max-width: none;
-  margin: 0px;
-  z-index: 100;
+  // z-index: 100;
   overflow-x: hidden;
   overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  // justify-content: space-between;
 }
 
 #marker {
@@ -275,4 +260,8 @@ body.modal-open div.modal-backdrop {
 
 .about {
   line-height: 120%;
+}
+
+.alert {
+  text-align: center;
 }
