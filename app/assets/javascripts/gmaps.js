@@ -85,11 +85,11 @@ function initAutocomplete() {
     });
     
     map.fitBounds(bounds);
-    map.panBy(0,-220);
+    map.panBy(0,-180);
     
     google.maps.event.addListenerOnce(yourMap, 'bounds_changed', function(event) {
-      if (this.getZoom() > 13) {
-      this.setZoom(13);
+      if (this.getZoom() > 10) {
+      this.setZoom(10);
       }
     });
     
