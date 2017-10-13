@@ -78,19 +78,21 @@ h5, h6 {
 footer {
   position: absolute;
   bottom: 0;
-  padding-bottom: 1.5em;
+  padding-bottom: 2.1em;
   align-self: center;
 }
 
 .next-quote {
   color: #F84342;
   font-family: 'Hind Vadodara', sans-serif;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .footer-blurb {
   font-family: 'Hind Vadodara', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 500;
   font-style: italic;
   text-align: right;
 }
@@ -125,7 +127,6 @@ footer {
   flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  // justify-content: space-between;
 }
 
 #marker {
@@ -258,10 +259,27 @@ body.modal-open div.modal-backdrop {
   display: inline;
 }
 
-.about {
-  line-height: 120%;
-}
-
 .alert {
   text-align: center;
+}
+
+// about frosted background
+$menubg1: rgba(255,255,255,0.25);
+$menubg2: rgba(255,255,255,0.65);
+$blur: 3px;
+
+.glass { 
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  background: linear-gradient($menubg1, $menubg2);
+    
+  &::before {
+    z-index: -1;
+    content: ' ';
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
