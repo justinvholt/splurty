@@ -21,9 +21,8 @@ class QuotesController < ApplicationController
 
     if @quote.save
       UserMailer.confirm_or_no(@quote).deliver
+      redirect_to root_path
     end
-
-    redirect_to root_path
   end
   
   def destination
