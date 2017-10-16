@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   
   def confirm_or_no(quote)
     @quote = quote
-    mail to: 'justinvholt@gmail.com', subject: 'SplurtyAbroad Quote Submission'
+    mail(to: 'justinvholt@gmail.com', subject: 'SplurtyAbroad Quote Submission')
   end
 
 end

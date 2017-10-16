@@ -3,10 +3,6 @@ class QuotesController < ApplicationController
     @quote = Quote.order('RANDOM()').first
   end
 
-  # def new
-  #   @quote = Quote.new
-  # end
-  
   def create
     @quote = Quote.create(quote_params)
     if @quote.invalid?
@@ -24,7 +20,7 @@ class QuotesController < ApplicationController
     end
 
     UserMailer.confirm_or_no(@quote).deliver
-
+    
     redirect_to root_path
   end
   
