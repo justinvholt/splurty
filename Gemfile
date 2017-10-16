@@ -60,3 +60,6 @@ gem 'simple_form'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
+
+# Adding will_paginate gem for pagination
+gem "will_paginate", "~> 3.0"
