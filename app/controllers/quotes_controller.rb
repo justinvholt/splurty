@@ -19,6 +19,10 @@ class QuotesController < ApplicationController
       @quote.saying = @quote.saying.tr('\"', "")
     end
 
+    if @quote.save
+      UserMailer.confirm_or_no(@quote).deliver
+    end
+
     redirect_to root_path
   end
   
